@@ -12,11 +12,13 @@ import java.util.HashMap;
  * @author Adia
  */
 public class Meal {
-    EnumMap<Ingredient, Double> ingredients;
+    EnumMap<Food, HashMap<String, Double>> foods;
+    HashMap<String, Double> foodMealDetails = new HashMap();
     
     Meal() { 
-        ingredients = new EnumMap<Ingredient, Double>(Ingredient.class);
-        ingredients.put(Ingredient.YOGURT_GREEK_WHOLE_MILK_PLAIN, 245.00);
+        foods = new EnumMap<Food, HashMap<String, Double>>(Food.class);
+        foodMealDetails.put("gramWeight", 245.00);
+        foods.put(Food.YOGURT_GREEK_WHOLE_MILK_PLAIN, foodMealDetails);
     }
     
     public double nutrientAmount(Nutrient nutrient) {
@@ -24,11 +26,11 @@ public class Meal {
         return 4;
     }
     
-    private double nutrition(Ingredient ingredient, Nutrient nutrient) {
-        return ingredientPortion(ingredient) * Ingredient.zincAmount();
+    private double nutrition(Food food, Nutrient nutrient) {
+        return foodPortion(food) * Food.zincAmount();
     };
     
-    private double ingredientPortion(Ingredient ingredient) {
-        return ingredients.get(ingredient)/Ingredient.PORTION_AMOUNT;  
+    private double foodPortion(Food food) {
+        return foods.get(food).get("gramWeight")/Food.PORTION_AMOUNT;  
     }
 }

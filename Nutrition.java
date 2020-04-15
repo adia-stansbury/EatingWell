@@ -61,25 +61,17 @@ public class Nutrition {
 //            + percentOfRDA(12.2,400) + "% RDA"
         System.out.println("Abnormal intakes: "); 
         double intake;
-//        ArrayList meals;
-//        meals = new ArrayList(3);
-//        meals.add(Meal new Meal());
-//        meals[1] = new Meal();
-//        meals[2] = new Meal();
-//        Intake intakes = new Intake(meals);
         Nutrition nutrition;
         Meal meal;
         meal = new Meal();
         for (Nutrient nutrient : Nutrient.values()) {
-//            intake = intakes.forNutrient(nutrient);
-               intake = meal.nutrientAmount(nutrient);
+            intake = meal.nutrientAmount(nutrient);
             nutrition = new Nutrition(intake, nutrient);
             if (nutrition.isAbnormalIntake()) {
                 System.out.println(nutrient + ": " + intake + " (" + nutrient.recommendedIntake + " - " + nutrient.upperLimit + ") " + nutrient.unit);
             };
         } 
-//            if (intakeZinc < Zinc.rda || intakeZinc > Zinc.upperLimit) {
-//                "zinc: " + percentOfRDA(intakeZinc,rdaZinc), iron (mg): "
+//            percentOfRDA(intakeZinc,rdaZinc), iron (mg): "
 //            + percentOfRDA(0,18) + "% RDA, calcium (mg): "
 //            + percentOfRDA(245,1000) + "% RDA, magnesium (mg): "
 //            + percentOfRDA(27,310) + "% RDA, phosphorus (mg): "
