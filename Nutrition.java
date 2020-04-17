@@ -63,7 +63,13 @@ public class Nutrition {
         double intake;
         Nutrition nutrition;
         Meal meal;
-        meal = new Meal();
+        ArrayList mealFoods = new ArrayList();
+        Food yogurt;
+        yogurt = new Food("Yogurt,Greek,Whole Milk,Plain", 0.52, "mg");
+        MealFood mealWithYogurt;
+        mealWithYogurt = new MealFood(yogurt, 245.00);
+        mealFoods.add(mealWithYogurt);
+        meal = new Meal(mealFoods);
         for (Nutrient nutrient : Nutrient.values()) {
             intake = meal.nutrientAmount(nutrient);
             nutrition = new Nutrition(intake, nutrient);
@@ -95,8 +101,3 @@ public class Nutrition {
 //         );
     }
 }
-
-// TODO: given a meal plan (to start has just two foods: yogurt and grapefruit,
-// output nutrients that are not in normal range and
-// their intake & rda so that I know which nutrients to adjust
-// TODO: add protein
