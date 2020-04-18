@@ -65,7 +65,7 @@ public class Nutrition {
         Meal meal;
         ArrayList mealFoods = new ArrayList();
         Food yogurt;
-        yogurt = new Food("Yogurt,Greek,Whole Milk,Plain", 0.52, "mg");
+        yogurt = new Food("Yogurt,Greek,Whole Milk,Plain");
         MealFood mealWithYogurt;
         mealWithYogurt = new MealFood(yogurt, 245.00);
         mealFoods.add(mealWithYogurt);
@@ -74,11 +74,10 @@ public class Nutrition {
             intake = meal.nutrientAmount(nutrient);
             nutrition = new Nutrition(intake, nutrient);
             if (nutrition.isAbnormalIntake()) {
-                System.out.println(nutrient + ": " + intake + " (" + nutrient.recommendedIntake + " - " + nutrient.upperLimit + ") " + nutrient.unit);
+                System.out.println(nutrient + ": " + intake + " " + yogurt.nutrientUnitName(nutrient)+ " (" + nutrient.recommendedIntake + " - " + nutrient.upperLimit + " " + nutrient.unit + ")");
             };
         } 
-//            percentOfRDA(intakeZinc,rdaZinc), iron (mg): "
-//            + percentOfRDA(0,18) + "% RDA, calcium (mg): "
+//            percentOfRDA(intakeZinc,rdaZinc), "% RDA, calcium (mg): "
 //            + percentOfRDA(245,1000) + "% RDA, magnesium (mg): "
 //            + percentOfRDA(27,310) + "% RDA, phosphorus (mg): "
 //            + percentOfRDA(331,700) + "% RDA, potassium (mg): "

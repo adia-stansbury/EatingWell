@@ -22,7 +22,7 @@ public class Meal {
     
     public double nutrientAmount(Nutrient nutrient) {
         double sum = mealFoods.stream()
-                          .mapToDouble(food -> food.zincAmount())
+                          .mapToDouble(mealFood -> mealFood.nutrientAmount(nutrient))
                           .sum();
         return sum;
     }

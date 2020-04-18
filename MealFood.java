@@ -18,8 +18,8 @@ public class MealFood {
         this.gramWeight = gramWeight;
     }
     
-    public double zincAmount() {
-        return food.amountOfZincPerPortion * numberOfPortions();
+    public double nutrientAmount(Nutrient nutrient) {
+        return food.nutritionPerPortion(nutrient) * numberOfPortions();
     }
     
     private double numberOfPortions() {

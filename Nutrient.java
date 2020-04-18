@@ -10,7 +10,8 @@ package adia.nutritionalreportapp;
  * @author Adia
  */
 public enum Nutrient {
-    ZINC (8, 40, "mg");
+    ZINC (8, 40, "mg"),
+    IRON (18, 45, "mg");
     
     public final double recommendedIntake;
     public final double upperLimit; //if none, perhaps default to infinity
@@ -24,7 +25,7 @@ public enum Nutrient {
     
 }
         
-//        static final double upperLimitZinc = 40; // mg
+
 //    static final double upperLimitVitaminA = 3000; // mcg
 //    static final double upperLimitVitaminC = 2000; // mg
 //    static final double upperLimitVitaminD = 50; // mcg
