@@ -10,49 +10,45 @@ package adia.nutritionalreportapp;
  * @author Adia
  */
 public enum Nutrient {
-    ZINC (8, 40, "mg"),
-    IRON (18, 45, "mg");
+    // Nutrients in Part 3 of DRI
+    ZINC (16, 40.00, "mg"),
+    IRON (23.63, 45.00, "mg"),
+    CALCIUM (1000, 2500.00, "mg"), 
+    MAGNESIUM (320, 350.00, "mg"),
+    PHOSPHORUS (700, 4000.00, "mg"),
+    POTASSIUM (4.7, null, "g"),
+    COPPER (900, 10000.00, "mcg"),
+    MANGANESE (1.8, 11.00, "mg"),
+    SELENIUM (55, 400.00, "mcg"),
+    THIAMIN (1.1, null, "mg"),
+    RIBOFLAVIN (1.1, null, "mg"),
+    VITAMIN_A (700, 3000.00, "mcg"), 
+    VITAMIN_C (75, 2000.00, "mg"),
+    VITAMIN_D (5, 50.00, "mcg"),
+    VITAMIN_E (15, 1000.00, "mg"),
+    VITAMIN_K (90, null, "mcg"),
+    NIACIN (14, 35.00, "mg"),
+    VITAMIN_B6 (1.3, 100.00, "mg"),
+    VITAMIN_B12 (2.4, null, "mcg"),
+    BIOTIN (30, null, "mcg"),
+    FOLATE (400, 1000.00, "mcg"),
+    CHOLINE (425, 3500.00, "mg"),
+    PANTOTHENIC_ACID (5, null, "mg"),
+    CHROMIUM (25, null, "mcg"),
+    FLUORIDE (3, 10.00, "mg"),
+    IODINE (150, 1100.00, "mcg"),
+    MOLYBDENUM (45, 2000.00, "mcg"),
+    SODIUM (1.5, 2.3, "g"),
+    CHLORIDE (2.3, 3.6, "g");
+
     
     public final double recommendedIntake;
-    public final double upperLimit; //if none, perhaps default to infinity
+    public final Double upperLimit; 
     public final String unit;
     
-    Nutrient(double recommendedDailyIntake, double dailyUpperLimit, String unit) {
+    Nutrient(double recommendedDailyIntake, Double dailyUpperLimit, String unit) {
         this.recommendedIntake = recommendedDailyIntake;
         this.upperLimit = dailyUpperLimit;
         this.unit = unit;
     }
-    
 }
-        
-
-//    static final double upperLimitVitaminA = 3000; // mcg
-//    static final double upperLimitVitaminC = 2000; // mg
-//    static final double upperLimitVitaminD = 50; // mcg
-//    static final double upperLimitVitaminE = 1000; // mg
-//    static final double upperLimitNiacin = 35; // mg
-//    static final double upperLimitVitaminB6 = 100; // mg
-//    static final double upperLimitFolate = 1000; //mcg
-//    static final double upperLimitCholine = 3.5; // g
-    // zinc (mg): "
-//            + percentOfRDA(1.27,8) + "% RDA, iron (mg): "
-//            + percentOfRDA(0,18) + "% RDA, calcium (mg): "
-//            + percentOfRDA(245,1000) + "% RDA, magnesium (mg): "
-//            + percentOfRDA(27,310) + "% RDA, phosphorus (mg): "
-//            + percentOfRDA(331,700) + "% RDA, potassium (mg): "
-//            + percentOfRDA(345,4700) + "% RDA, copper (mg): "
-//            + percentOfRDA(0.042,0.9) + "% RDA, manganese (mg): "
-//            + percentOfRDA(0,1.8) + "% RDA, selenium (mcg): "
-//            + percentOfRDA(23.8,55) + "% RDA, vitamin A (mg): "
-//            + percentOfRDA(0,700) + "% RDA, vitamin E (mg): "
-//            + percentOfRDA(0,15) + "% RDA, vitamin D (IU): "
-//            + percentOfRDA(0,600) + "% RDA, vitamin C (mg): "
-//            + percentOfRDA(0,75) + "% RDA, thiamin (mg): "
-//            + percentOfRDA(0.056,1.1) + "% RDA, riboflavin (mg): "
-//            + percentOfRDA(0.681,1.1) + "% RDA, niacin (mg): "
-//            + percentOfRDA(0.51,14) + "% RDA, vitamin B6 (mg): "
-//            + percentOfRDA(0.154,1.3) + "% RDA, vitamin B12 (mcg): "
-//            + percentOfRDA(1.84,2.4) + "% RDA, choline (mg): "
-//            + percentOfRDA(37,425) + "% RDA, vitamin K (mcg): "
-//            + percentOfRDA(0,90) + "% RDA, folate (mcg): "
-//            + percentOfRDA(12.2,400) + "% RDA"
