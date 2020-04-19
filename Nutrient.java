@@ -16,7 +16,7 @@ public enum Nutrient {
     CALCIUM (1000, 2500.00, "mg"), 
     MAGNESIUM (320, 350.00, "mg"),
     PHOSPHORUS (700, 4000.00, "mg"),
-    POTASSIUM (4.7, null, "g"),
+    POTASSIUM (4.7, null, "g"), // TODO: handle UL of null when calc Nutrition.isAbnormalIntake
     COPPER (900, 10000.00, "mcg"),
     MANGANESE (1.8, 11.00, "mg"),
     SELENIUM (55, 400.00, "mcg"),
