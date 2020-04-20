@@ -4,7 +4,6 @@
  * and open the template in the editor.
  */
 package adia.nutritionalreportapp;
-import java.util.EnumMap;
 import java.util.ArrayList;
 
 /**
@@ -21,10 +20,7 @@ public class Nutrition {
     }
     
     public boolean isAbnormalIntake() {
-        if (intake < nutrient.recommendedIntake || intake > nutrient.upperLimit) {
-            return true;
-        }
-        return false;
+        return (intake < nutrient.recommendedIntake) || (intake > nutrient.upperLimit);
     }
     
     public static void main(String[] args) {
@@ -43,7 +39,7 @@ public class Nutrition {
             intake = meal.nutrientAmount(nutrient);
             nutrition = new Nutrition(intake, nutrient);
             if (nutrition.isAbnormalIntake()) {
-                System.out.println(nutrient + ": " + intake + " " + yogurt.nutrientUnitName(nutrient)+ " (" + nutrient.recommendedIntake + " - " + nutrient.upperLimit + " " + nutrient.unit + ")");
+                System.out.println(nutrient + ": " + intake + " (" + nutrient.recommendedIntake + " - " + nutrient.upperLimit + ")" + " " + nutrient.unit);
             };
         } 
     }

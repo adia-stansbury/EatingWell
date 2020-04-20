@@ -4,9 +4,6 @@
  * and open the template in the editor.
  */
 package adia.nutritionalreportapp;
-import java.util.EnumMap;
-import java.util.HashMap;
-import java.util.AbstractMap;
 import java.util.ArrayList;
 
 /**
