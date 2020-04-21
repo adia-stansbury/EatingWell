@@ -69,6 +69,32 @@ public class Food {
         nutritionForBread.put(Nutrient.VITAMIN_K, nutrientDetails(0.2)); // mcg
                 
         nutritionPerPortion.put("Bread,white", nutritionForBread);
+        
+        HashMap<Nutrient, HashMap<String, Object>> nutritionForHavarti = new HashMap();
+        
+        nutritionForHavarti.put(Nutrient.ZINC, nutrientDetails(0)); // mg
+        nutritionForHavarti.put(Nutrient.IRON, nutrientDetails(0)); // mg
+        nutritionForHavarti.put(Nutrient.CALCIUM, nutrientDetails(714)); // mg
+        nutritionForHavarti.put(Nutrient.CHOLINE, nutrientDetails(0)); // mg
+        nutritionForHavarti.put(Nutrient.COPPER, nutrientDetails(0)); // mcg
+        nutritionForHavarti.put(Nutrient.FOLATE, nutrientDetails(0)); // mcg
+        nutritionForHavarti.put(Nutrient.MAGNESIUM, nutrientDetails(0)); // mg
+        nutritionForHavarti.put(Nutrient.NIACIN, nutrientDetails(0)); // mg
+        nutritionForHavarti.put(Nutrient.PHOSPHORUS, nutrientDetails(0)); // mg
+        nutritionForHavarti.put(Nutrient.POTASSIUM, nutrientDetails(0)); // mg
+        nutritionForHavarti.put(Nutrient.RIBOFLAVIN, nutrientDetails(0)); // mg
+        nutritionForHavarti.put(Nutrient.SELENIUM, nutrientDetails(0)); // mcg
+        nutritionForHavarti.put(Nutrient.SODIUM, nutrientDetails(.75)); // g
+        nutritionForHavarti.put(Nutrient.THIAMIN, nutrientDetails(0)); // mg
+        nutritionForHavarti.put(Nutrient.VITAMIN_A, nutrientDetails(0)); // mcg
+        nutritionForHavarti.put(Nutrient.VITAMIN_B12, nutrientDetails(0)); // mcg
+        nutritionForHavarti.put(Nutrient.VITAMIN_B6, nutrientDetails(0)); // mg
+        nutritionForHavarti.put(Nutrient.VITAMIN_C, nutrientDetails(0)); // mg
+        nutritionForHavarti.put(Nutrient.VITAMIN_D, nutrientDetails(0)); // mcg
+        nutritionForHavarti.put(Nutrient.VITAMIN_E, nutrientDetails(0)); // mg
+        nutritionForHavarti.put(Nutrient.VITAMIN_K, nutrientDetails(0)); // mcg
+                
+        nutritionPerPortion.put("Havarti", nutritionForHavarti);
     }
     
     public String name() { return name; }

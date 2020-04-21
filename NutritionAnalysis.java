@@ -29,6 +29,7 @@ public class NutritionAnalysis {
         ArrayList<FoodIntake> foodsIntake = new ArrayList();
         foodsIntake.add(new FoodIntake(new Food("Yogurt,greek,whole milk,plain"), 245));
         foodsIntake.add(new FoodIntake(new Food("Bread,white"), 98));
+        foodsIntake.add(new FoodIntake(new Food("Havarti"), 68));
 
         double intake;
         NutritionAnalysis nutritionAnalysis;
