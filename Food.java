@@ -18,31 +18,57 @@ public class Food {
     Food(String name) {
         this.name = name;
         
-        HashMap<Nutrient, HashMap<String, Object>> nutrients = new HashMap();
+        HashMap<Nutrient, HashMap<String, Object>> nutritionForYogurt = new HashMap();
         
-        nutrients.put(Nutrient.ZINC, nutrientDetails(0.52));
-        nutrients.put(Nutrient.IRON, nutrientDetails(0));
-        nutrients.put(Nutrient.CALCIUM, nutrientDetails(100.00));
-        nutrients.put(Nutrient.CHOLINE, nutrientDetails(15.1));
-        nutrients.put(Nutrient.COPPER, nutrientDetails(17.0));
-        nutrients.put(Nutrient.FOLATE, nutrientDetails(5.0));
-        nutrients.put(Nutrient.MAGNESIUM, nutrientDetails(11.0));
-        nutrients.put(Nutrient.NIACIN, nutrientDetails(0.208));
-        nutrients.put(Nutrient.PHOSPHORUS, nutrientDetails(135.0));
-        nutrients.put(Nutrient.POTASSIUM, nutrientDetails(141.0));
-        nutrients.put(Nutrient.RIBOFLAVIN, nutrientDetails(0.278));
-        nutrients.put(Nutrient.SELENIUM, nutrientDetails(9.7));
-        nutrients.put(Nutrient.SODIUM, nutrientDetails(0.035));
-        nutrients.put(Nutrient.THIAMIN, nutrientDetails(0.023));
-        nutrients.put(Nutrient.VITAMIN_A, nutrientDetails(2.0));
-        nutrients.put(Nutrient.VITAMIN_B12, nutrientDetails(0.75));
-        nutrients.put(Nutrient.VITAMIN_B6, nutrientDetails(0.063));
-        nutrients.put(Nutrient.VITAMIN_C, nutrientDetails(0.0));
-        nutrients.put(Nutrient.VITAMIN_D, nutrientDetails(0.0));
-        nutrients.put(Nutrient.VITAMIN_E, nutrientDetails(0.01));
-        nutrients.put(Nutrient.VITAMIN_K, nutrientDetails(0.0));
+        nutritionForYogurt.put(Nutrient.ZINC, nutrientDetails(0.52));
+        nutritionForYogurt.put(Nutrient.IRON, nutrientDetails(0));
+        nutritionForYogurt.put(Nutrient.CALCIUM, nutrientDetails(100.00));
+        nutritionForYogurt.put(Nutrient.CHOLINE, nutrientDetails(15.1));
+        nutritionForYogurt.put(Nutrient.COPPER, nutrientDetails(17.0));
+        nutritionForYogurt.put(Nutrient.FOLATE, nutrientDetails(5.0));
+        nutritionForYogurt.put(Nutrient.MAGNESIUM, nutrientDetails(11.0));
+        nutritionForYogurt.put(Nutrient.NIACIN, nutrientDetails(0.208));
+        nutritionForYogurt.put(Nutrient.PHOSPHORUS, nutrientDetails(135.0));
+        nutritionForYogurt.put(Nutrient.POTASSIUM, nutrientDetails(141.0));
+        nutritionForYogurt.put(Nutrient.RIBOFLAVIN, nutrientDetails(0.278));
+        nutritionForYogurt.put(Nutrient.SELENIUM, nutrientDetails(9.7));
+        nutritionForYogurt.put(Nutrient.SODIUM, nutrientDetails(0.035));
+        nutritionForYogurt.put(Nutrient.THIAMIN, nutrientDetails(0.023));
+        nutritionForYogurt.put(Nutrient.VITAMIN_A, nutrientDetails(2.0));
+        nutritionForYogurt.put(Nutrient.VITAMIN_B12, nutrientDetails(0.75));
+        nutritionForYogurt.put(Nutrient.VITAMIN_B6, nutrientDetails(0.063));
+        nutritionForYogurt.put(Nutrient.VITAMIN_C, nutrientDetails(0.0));
+        nutritionForYogurt.put(Nutrient.VITAMIN_D, nutrientDetails(0.0));
+        nutritionForYogurt.put(Nutrient.VITAMIN_E, nutrientDetails(0.01));
+        nutritionForYogurt.put(Nutrient.VITAMIN_K, nutrientDetails(0.0));
                 
-        nutritionPerPortion.put("Yogurt,Greek,Whole Milk,Plain", nutrients);
+        nutritionPerPortion.put("Yogurt,greek,whole milk,plain", nutritionForYogurt);
+        
+        HashMap<Nutrient, HashMap<String, Object>> nutritionForBread = new HashMap();
+        
+        nutritionForBread.put(Nutrient.ZINC, nutrientDetails(0.74)); // mg
+        nutritionForBread.put(Nutrient.IRON, nutrientDetails(3.61)); // mg
+        nutritionForBread.put(Nutrient.CALCIUM, nutrientDetails(144)); // mg
+        nutritionForBread.put(Nutrient.CHOLINE, nutrientDetails(14.6)); // mg
+        nutritionForBread.put(Nutrient.COPPER, nutrientDetails(101)); // mcg
+        nutritionForBread.put(Nutrient.FOLATE, nutrientDetails(111)); // mcg
+        nutritionForBread.put(Nutrient.MAGNESIUM, nutrientDetails(23)); // mg
+        nutritionForBread.put(Nutrient.NIACIN, nutrientDetails(4.78)); // mg
+        nutritionForBread.put(Nutrient.PHOSPHORUS, nutrientDetails(98)); // mg
+        nutritionForBread.put(Nutrient.POTASSIUM, nutrientDetails(126)); // mg
+        nutritionForBread.put(Nutrient.RIBOFLAVIN, nutrientDetails(0.243)); // mg
+        nutritionForBread.put(Nutrient.SELENIUM, nutrientDetails(22)); // mcg
+        nutritionForBread.put(Nutrient.SODIUM, nutrientDetails(0.49)); // g
+        nutritionForBread.put(Nutrient.THIAMIN, nutrientDetails(0.533)); // mg
+        nutritionForBread.put(Nutrient.VITAMIN_A, nutrientDetails(0)); // mcg
+        nutritionForBread.put(Nutrient.VITAMIN_B12, nutrientDetails(0)); // mcg
+        nutritionForBread.put(Nutrient.VITAMIN_B6, nutrientDetails(0.087)); // mg
+        nutritionForBread.put(Nutrient.VITAMIN_C, nutrientDetails(0)); // mg
+        nutritionForBread.put(Nutrient.VITAMIN_D, nutrientDetails(0)); // mcg
+        nutritionForBread.put(Nutrient.VITAMIN_E, nutrientDetails(0.22)); // mg
+        nutritionForBread.put(Nutrient.VITAMIN_K, nutrientDetails(0.2)); // mcg
+                
+        nutritionPerPortion.put("Bread,white", nutritionForBread);
     }
     
     public HashMap foodDetails() {
@@ -56,7 +82,7 @@ public class Food {
     }
     
     private HashMap<String, Object> nutrientDetails(double amount) {
-        // amount is in same unit as enum Nutrient unit
+        // amount per 100g is in same unit as enum Nutrient unit
         HashMap<String, Object> details = new HashMap();
         
         details.put("amount", amount);

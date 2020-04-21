@@ -29,12 +29,21 @@ public class Nutrition {
         Nutrition nutrition;
         Meal meal;
         ArrayList mealFoods = new ArrayList();
+        
         Food yogurt;
-        yogurt = new Food("Yogurt,Greek,Whole Milk,Plain");
+        yogurt = new Food("Yogurt,greek,whole milk,plain");
         MealFood mealWithYogurt;
         mealWithYogurt = new MealFood(yogurt, 245.00);
         mealFoods.add(mealWithYogurt);
+        
+        Food bread;
+        bread = new Food("Bread,white");
+        MealFood mealWithBread;
+        mealWithBread = new MealFood(bread, 98);
+        mealFoods.add(mealWithBread);
+        
         meal = new Meal(mealFoods);
+        
         for (Nutrient nutrient : Nutrient.values()) {
             intake = meal.nutrientAmount(nutrient);
             nutrition = new Nutrition(intake, nutrient);
