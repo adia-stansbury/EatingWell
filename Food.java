@@ -71,10 +71,6 @@ public class Food {
         nutritionPerPortion.put("Bread,white", nutritionForBread);
     }
     
-    public HashMap foodDetails() {
-        return nutritionPerPortion.get(name);
-    }
-    
     public String name() { return name; }
     
     public double nutritionPerPortion(Nutrient nutrient) { 
