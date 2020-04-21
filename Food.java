@@ -13,12 +13,12 @@ import java.util.HashMap;
 public class Food {
     public static final double GRAM_PORTION_WEIGHT = 100.00;
     String name;
-    public static HashMap<String, HashMap<Nutrient, HashMap<String, Object>>> nutritionPerPortion = new HashMap();
+    public static HashMap<String, HashMap<Nutrient, HashMap<String, Double>>> nutritionPerPortion = new HashMap();
            
     Food(String name) {
         this.name = name;
         
-        HashMap<Nutrient, HashMap<String, Object>> nutritionForYogurt = new HashMap();
+        HashMap<Nutrient, HashMap<String, Double>> nutritionForYogurt = new HashMap();
         
         nutritionForYogurt.put(Nutrient.ZINC, nutrientDetails(0.52));
         nutritionForYogurt.put(Nutrient.IRON, nutrientDetails(0));
@@ -44,7 +44,7 @@ public class Food {
                 
         nutritionPerPortion.put("Yogurt,greek,whole milk,plain", nutritionForYogurt);
         
-        HashMap<Nutrient, HashMap<String, Object>> nutritionForBread = new HashMap();
+        HashMap<Nutrient, HashMap<String, Double>> nutritionForBread = new HashMap();
         
         nutritionForBread.put(Nutrient.ZINC, nutrientDetails(0.74)); // mg
         nutritionForBread.put(Nutrient.IRON, nutrientDetails(3.61)); // mg
@@ -70,7 +70,7 @@ public class Food {
                 
         nutritionPerPortion.put("Bread,white", nutritionForBread);
         
-        HashMap<Nutrient, HashMap<String, Object>> nutritionForHavarti = new HashMap();
+        HashMap<Nutrient, HashMap<String, Double>> nutritionForHavarti = new HashMap();
         
         nutritionForHavarti.put(Nutrient.ZINC, nutrientDetails(0)); // mg
         nutritionForHavarti.put(Nutrient.IRON, nutrientDetails(0)); // mg
@@ -95,6 +95,8 @@ public class Food {
         nutritionForHavarti.put(Nutrient.VITAMIN_K, nutrientDetails(0)); // mcg
                 
         nutritionPerPortion.put("Havarti", nutritionForHavarti);
+        
+        // TODO: nutritionPerPortion.put("Havarti", nutrition("539846"));
     }
     
     public String name() { return name; }
@@ -103,9 +105,24 @@ public class Food {
         return (double)nutritionPerPortion.get(name).get(nutrient).get("amount");
     }
     
-    private HashMap<String, Object> nutrientDetails(double amount) {
+    private HashMap<Nutrient, HashMap<String, Double>> nutrition(String apiID) {
+        HashMap<Nutrient, HashMap<String, Double>> nutrition = new HashMap();        
+        
+        for (Nutrient nutrient : Nutrient.values()) {
+            // get nutrient amount for 100g of food via API
+            // nutrient not found -> empty foodNutrients element
+            // convert nutrient amount to unit for nutrient
+            // explore api with demo key, might need to pass in nutrient id to api
+            double nutrientAmount = 0; 
+            nutrition.put(nutrient, nutrientDetails(nutrientAmount));
+        };
+        
+        return nutrition;
+    }
+    
+    private HashMap<String, Double> nutrientDetails(double amount) {
         // amount per 100g is in same unit as enum Nutrient unit
-        HashMap<String, Object> details = new HashMap();
+        HashMap<String, Double> details = new HashMap();
         
         details.put("amount", amount);
         
