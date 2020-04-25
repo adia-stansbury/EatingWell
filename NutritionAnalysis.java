@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package adia.nutritionalreportapp;
+import java.io.IOException;
 import java.util.ArrayList;
 
 /**
@@ -23,13 +24,13 @@ public class NutritionAnalysis {
         return (intake < nutrient.recommendedIntake) || (intake > nutrient.upperLimit);
     }
  
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         System.out.println("Abnormal intakes: "); 
         
         ArrayList<FoodIntake> foodsIntake = new ArrayList();
-        foodsIntake.add(new FoodIntake(new Food("Yogurt,greek,whole milk,plain"), 245));
-        foodsIntake.add(new FoodIntake(new Food("Bread,white"), 98));
-        foodsIntake.add(new FoodIntake(new Food("Havarti"), 68));
+//        foodsIntake.add(new FoodIntake(new Food("Yogurt,greek,whole milk,plain"), 245));
+//        foodsIntake.add(new FoodIntake(new Food("Bread,white"), 98));
+        foodsIntake.add(new FoodIntake(new Food("539846"), 68));
 
         double intake;
         NutritionAnalysis nutritionAnalysis;
